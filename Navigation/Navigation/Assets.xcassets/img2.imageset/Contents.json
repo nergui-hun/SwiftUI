@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "aubrieta-flowers-beautiful-violet-blossom-spring-bloom-6000x4000-2670.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
