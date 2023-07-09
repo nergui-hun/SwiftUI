@@ -10,28 +10,28 @@ import CoreData
 
 struct ContentView: View {
 
+    @State private var isLogin = false
+
     var body: some View {
         TabView() {
-            FeedView()
-                .tabItem {
-                    Label("Feed",
-                    systemImage: "house")
-                }
-                LoginView()
+            if isLogin {
+                ProfileView()
                     .tabItem {
-                        Label("Profile", systemImage: "person")
+                        Label("Profile", systemImage: "person.fill.checkmark")
                     }
-            PlayerView()
+            } else {
+                LoginView(logged: $isLogin)
+                    .tabItem {
+                        Label("Login", systemImage: "person")
+                    }
+            }
+            SettingsView()
                 .tabItem {
-                    Label("Player", systemImage: "music.note")
+                    Label("Settings", systemImage: "menucard")
                 }
-            VideoView()
+            InfoView()
                 .tabItem {
-                    Label("Video", systemImage: "play.rectangle")
-                }
-            RecorderView()
-                .tabItem {
-                    Label("Recorder", systemImage: "mic")
+                    Label("Anthropology", systemImage: "globe")
                 }
         }
     }
