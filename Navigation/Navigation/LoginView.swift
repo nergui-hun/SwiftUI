@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct LoginView: View {
+    @Binding var logged: Bool
 
     @State private var login: String = ""
     @State private var password: String = ""
 
     var body: some View {
         ZStack {
+            AngularGradient(gradient: Gradient(colors: [.red, .yellow,
+                                                        .green, .blue, .purple, .red]),
+                            center: .center, angle: Angle(radians: 1))
+            .ignoresSafeArea(edges: .top)
+
             VStack {
-                Image("logo")
+                Image("img2")
                     .resizable()
                     .frame(width: 160, height: 160)
+                    .cornerRadius(80)
                     .shadow(radius: 12)
-                    .padding(.top, 120)
+                    .padding(.top, 20)
 
                 VStack(spacing: -0.5) {
                     TextField("Login", text: $login)
@@ -34,15 +41,15 @@ struct LoginView: View {
                 .padding(16)
 
                 Button(action: {
-
+                    self.logged = true
                 }) {
                     Text("Log in")
                         .frame(height: 50)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .modifier(TextModifier())
                 }
                 .frame(maxWidth: .infinity, maxHeight: 50)
-                .background(Color("AccentColor"))
+                .background(Color(.systemMint))
                 .cornerRadius(12)
                 .padding(16)
 
